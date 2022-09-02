@@ -4,14 +4,21 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          Column
-        </div>
-        <div class="col">
-          Column
+         Olá {{ user.employee.name }}
         </div>
         <div class="col">
             <a href="{% url 'logout' %}">Logout</a>
         </div>
+
+        <div class="col">
+            {% if user.employee.company %}
+                <a href="{% url 'edit_company' user.employee.company.id %}">Editar empresa</a>
+            {% else %}
+                <a href="{% url 'create_company' %}">Criar Empresa</a>
+            {% endif %}
+        </div>
+
+
       </div>
     </div>
 {% endblock %}
