@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <div class="container text-center">
+    <div class="container text-center" xmlns="http://www.w3.org/1999/html">
       <div class="row">
         <div class="col">
          Olá {{ user.employee.name }}
@@ -9,8 +9,9 @@
         <div class="col">
             <a href="{% url 'logout' %}">Logout</a>
         </div>
-          <div class="col">
-            <a href="{% url 'list_employees' %}">Manager Employees</a>
+        <div class="col">
+              <a href="{% url 'list_employees' %}">Manager Employees</a> </br>
+              <a href="{% url 'list_departaments' %}">Manager Departaments</a>
         </div>
 
         <div class="col">
