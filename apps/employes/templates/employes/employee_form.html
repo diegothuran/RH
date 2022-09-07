@@ -13,4 +13,20 @@
 
         <button type="submit" class="btn btn-main">Enviar</button>
     </form>
+
+<br>
+<h2>Documentos</h2>
+<ul>
+{% for document in object.document_set.all %}
+    <li>
+        <a href="{{ document.file.url }} "> {{ document.description }}  </a><br>
+    </li>
+{% endfor %}
+</ul>
+
+{% if object %}
+<a href="{% url 'create_document' object.id %}" class="btn btn-success">
+    Adicionar documento
+</a>
+{% endif %}
 {% endblock %}
